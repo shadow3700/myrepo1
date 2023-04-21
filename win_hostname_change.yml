@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+   - name: Change the hostname to sample-hostname
+     win_hostname:
+      name: sample-hostname
+     register: res
+   - name: Reboot
+     win_reboot:
+     when: res.reboot_required
