@@ -1,0 +1,14 @@
+---
+- name: touch files test
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: create directory
+    file:
+      path: /home/ansible/test
+      state: directory
+      
+  - name: touch file
+    file:
+      path: /home/ansible/test/test.txt
+      state: touch
