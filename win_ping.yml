@@ -1,0 +1,6 @@
+---
+- hosts: all
+  remote_user: ansible
+  tasks:
+  - name: win ping test
+    win_ping:
